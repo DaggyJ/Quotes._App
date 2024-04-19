@@ -1,7 +1,7 @@
 const quoteText = document.getElementById("quote-text");
 const quoteAuthor = document.getElementById("quote-author");
 const newQuoteButton = document.getElementById("new-quote");
-const tweetButton = document.getElementById("tweet-quote");
+const whatAppButton = document.getElementById("whatsApp-quote");
 const facebookButton = document.getElementById("facebook-quote");
 
 
@@ -29,15 +29,16 @@ const renderQuote = ()=> {
 
 };
 
-const tweetQuote = () => {
-    const twitterUrl = `https://twitter.com/intent/tweet?text=${encodedURIComponent( `" ` + currentQuote.text + `" ` + (currentQuote.author ||  "Anonymous")
+const whatsAppQuote = () => {
+    
+    const whatsAppUrl = `https://wa.me/254702422547=${encodedURIComponent( `" ` + currentQuote.text + `" ` + (currentQuote.author ||  "Anonymous")
     )}`;
 
-    window.open(twitterUrl, "_blank");
+    window.open(whatsAppUrl, "_blank");
 };
 
 const facebookQuote = () => {
-    const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodedURIComponent(
+    const facebookUrl = `https://www.facebook.com/sammytransporter.daggy=${encodedURIComponent(
     window.location.href
     )}`;
 
@@ -45,7 +46,7 @@ const facebookQuote = () => {
 };
 
 newQuoteButton.addEventListener("click", getRandomQuote);
-tweetButton.addEventListener("click", tweetQuote);
+whatsAppButton.addEventListener("click", whatsAppQuote);
 facebookButton.addEventListener("click", facebookQuote);
 
 fetchData();
